@@ -7,13 +7,15 @@ use Cryptocurrency\Task1\Ethereum;
 use Cryptocurrency\Task1\Dogecoin;
 use Cryptocurrency\Task1\CoinMarket;
 use Cryptocurrency\Task3\MarketHtmlPresenter;
+use Cryptocurrency\Task3\RandPrice;
 
 // Fill in your market with currencies and use your presenter to show data here:
 $market = new CoinMarket();
+$dailyPrice = new RandPrice();
 
-$bitcoin = new Bitcoin((float)(mt_rand(1, 1000) .'.'. mt_rand(0, 99)));
-$ethereum = new Ethereum((float)(mt_rand(1, 1000) .'.'. mt_rand(0, 99)));
-$dogecoin = new Dogecoin((float)(mt_rand(1, 1000) .'.'. mt_rand(0, 99)));
+$bitcoin = new Bitcoin($dailyPrice->getRandDailyPrice());
+$ethereum = new Ethereum($dailyPrice->getRandDailyPrice());
+$dogecoin = new Dogecoin($dailyPrice->getRandDailyPrice());
 
 $market->addCurrency($bitcoin);
 $market->addCurrency($ethereum);
