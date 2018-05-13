@@ -21,6 +21,6 @@ class RandPrice
         $randDailyPrice .= '.';
         $randDailyPrice .= mt_rand(0, 99);
 
-        return $randDailyPrice;
+        return (float)$randDailyPrice;
     }
 }

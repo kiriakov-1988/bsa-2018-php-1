@@ -11,7 +11,7 @@ class MarketHtmlPresenter
         $html = '';
 
         foreach ($market->getCurrencies() as $currency) {
-            $html .= "<img src='{$currency->getLogoUrl()}'>{$currency->getName()} : {$currency->getDailyPrice()}<br>\n";
+            $html .= "<img src=\"{$currency->getLogoUrl()}\"> {$currency->getName()}: {$currency->getDailyPrice()}<br>\n";
         }
 
         return $html;
